@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ChatViewController" customModule="Hanashi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MXg-2a-Th1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" editable="NO" text="Hey! How are you? I am okay!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-wb-0MD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yv7-7g-gZF">
+                                        <rect key="frame" x="0.0" y="802" width="414" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type something here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6P-Mp-7Gx">
+                                                <rect key="frame" x="10" y="0.0" width="394" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="send" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <connections>
+                                                    <action selector="onSendDidPress:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="nVX-Tw-kfw"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1346529424" green="0.1431995928" blue="0.15903130169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="X6P-Mp-7Gx" secondAttribute="trailing" constant="10" id="53n-gG-V2L"/>
+                                            <constraint firstAttribute="height" constant="50" id="B9A-kw-N8t"/>
+                                            <constraint firstItem="X6P-Mp-7Gx" firstAttribute="leading" secondItem="yv7-7g-gZF" secondAttribute="leading" constant="10" id="BvE-HK-NG7"/>
+                                            <constraint firstItem="X6P-Mp-7Gx" firstAttribute="top" secondItem="yv7-7g-gZF" secondAttribute="top" id="dXf-6L-trQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="X6P-Mp-7Gx" secondAttribute="bottom" id="js1-Eb-6eT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MXg-2a-Th1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A1r-NX-uI9"/>
+                            <constraint firstItem="MXg-2a-Th1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pca-RL-51U"/>
+                            <constraint firstAttribute="bottom" secondItem="MXg-2a-Th1" secondAttribute="bottom" id="Ryb-28-BPV"/>
+                            <constraint firstItem="MXg-2a-Th1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pxJ-53-JDO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="chatInputText" destination="X6P-Mp-7Gx" id="b5c-ER-un7"/>
+                        <outlet property="chatTextView" destination="0yJ-wb-0MD" id="Xrb-Z6-JA3"/>
+                        <outlet property="composeViewBottomConstraint" destination="Ryb-28-BPV" id="zTa-Yy-QdE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
